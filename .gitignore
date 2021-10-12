@@ -2,6 +2,8 @@
 .DS_Store
 
 datasets/
+checkpoints/
+runs/
 
 *.pth
 *.jpg

@@ -1,9 +1,9 @@
-# tryon
-Virtual try-on project.
+# Virtual try-on project.
 
+# Train model
+`python train.py --name experiment_name`
 
-# train
-python train.py --name exp1
+Copy checkpoint folder `experiment_name` to ACGPN_inference
 
-# test
-python test.py --load_pretrain ./checkpoints/exp_100_samples
+# Run inference
+python test.py --load_pretrain ./checkpoints/experiment_name

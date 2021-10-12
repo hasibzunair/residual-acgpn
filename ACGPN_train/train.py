@@ -208,8 +208,10 @@ for epoch in range(start_epoch, opt.niter + opt.niter_decay + 1):
             print('saving the latest model (epoch %d, total_steps %d)' % (epoch, total_steps))
             model.module.save('latest')
             np.savetxt(iter_path, (epoch, epoch_iter), delimiter=',', fmt='%d')
-
-        if epoch_iter >= dataset_size:
+        
+        # subsample dataset
+        # for full data use 'dataset_size'
+        if epoch_iter >= 100:
             break
        
     # end of epoch 
