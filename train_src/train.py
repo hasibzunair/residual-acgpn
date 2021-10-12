@@ -18,6 +18,12 @@ import ipdb
 writer = SummaryWriter('runs/uniform_all')
 SIZE=320
 NC=14
+def log(text):
+    '''Print text and save in a log file'''
+    if log_file is not None:
+        print(text, file=log_file)
+    print(text)
+    
 def generate_label_plain(inputs):
     size = inputs.size()
     pred_batch = []
@@ -84,13 +90,15 @@ def changearm(old_label):
 os.makedirs('sample',exist_ok=True)
 opt = TrainOptions().parse()
 iter_path = os.path.join(opt.checkpoints_dir, opt.name, 'iter.txt')
+log_path = os.path.join(opt.checkpoints_dir, opt.name, 'log.txt')
+log_file = open(log_path, 'a')
 
 if opt.continue_train:
     try:
         start_epoch, epoch_iter = np.loadtxt(iter_path , delimiter=',', dtype=int)
     except:
         start_epoch, epoch_iter = 1, 0
-    print('Resuming from epoch %d at iteration %d' % (start_epoch, epoch_iter))        
+    log('Resuming from epoch %d at iteration %d' % (start_epoch, epoch_iter))        
 else:    
     start_epoch, epoch_iter = 1, 0
 
@@ -104,7 +112,7 @@ if opt.debug:
 data_loader = CreateDataLoader(opt)
 dataset = data_loader.load_data()
 dataset_size = len(data_loader)
-print('#training images = %d' % dataset_size)
+log('#training images = %d' % dataset_size)
 
 model = create_model(opt)
 
@@ -201,27 +209,27 @@ for epoch in range(start_epoch, opt.niter + opt.niter_decay + 1):
         time_stamp = datetime.datetime.now()
         now = time_stamp.strftime('%Y.%m.%d-%H:%M:%S')
         #print('{}:{}:[step-{}]--[loss_G-{:.6f}]--[loss_D-{:.6f}]--[ETA-{}]-[rx{}]-[ry{}]-[cx{}]-[cy{}]-[rg{}]-[cg{}]'.format(now,epoch_iter,step, loss_G, loss_D, eta,rx,ry,cx,cy,rg,cg))
-        print('{}:{}:[step-{}]--[loss_G-{:.6f}]--[loss_D-{:.6f}]--[ETA-{}]'.format(now,epoch_iter,step, loss_G,loss_D, eta))
+        log('{}:{}:[step-{}]--[loss_G-{:.6f}]--[loss_D-{:.6f}]--[ETA-{}]'.format(now,epoch_iter,step, loss_G,loss_D, eta))
 
         ### save latest model
         if total_steps % opt.save_latest_freq == save_delta:
-            print('saving the latest model (epoch %d, total_steps %d)' % (epoch, total_steps))
+            log('saving the latest model (epoch %d, total_steps %d)' % (epoch, total_steps))
             model.module.save('latest')
             np.savetxt(iter_path, (epoch, epoch_iter), delimiter=',', fmt='%d')
         
         # subsample dataset
         # for full data use 'dataset_size'
-        if epoch_iter >= 3000:
+        if epoch_iter >= 5000:
             break
        
     # end of epoch 
     iter_end_time = time.time()
-    print('End of epoch %d / %d \t Time Taken: %d sec' %
+    log('End of epoch %d / %d \t Time Taken: %d sec' %
           (epoch, opt.niter + opt.niter_decay, time.time() - epoch_start_time))
 
     ### save model for this epoch
     if epoch % opt.save_epoch_freq == 0:
-        print('saving the model at the end of epoch %d, iters %d' % (epoch, total_steps))        
+        log('saving the model at the end of epoch %d, iters %d' % (epoch, total_steps))        
         model.module.save('latest')
         model.module.save(epoch)
         np.savetxt(iter_path, (epoch + 1, 0), delimiter=',', fmt='%d')
