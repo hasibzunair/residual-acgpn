@@ -1,5 +1,12 @@
 # Virtual try-on project.
 
+# TODO
+
+* <s>Train ACGPN</s>
+* Read train script
+* Read test script
+* Compute IS and SSIM
+
 # Train model
 `python train.py --name experiment_name`
 
