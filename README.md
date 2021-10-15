@@ -4,7 +4,8 @@
 
 * <s>Train ACGPN</s>
 * <s>Read data loader script</s>
-* Read test script
+* <s>Read test script </s>
+* Make reference cloth and person cloth same in dataloader
 * Compute IS and SSIM
 * Read train script
 
