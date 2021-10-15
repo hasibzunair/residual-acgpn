@@ -17,4 +17,7 @@ Copy checkpoint folder `experiment_name` to ACGPN_inference
 `python test.py --load_pretrain ./checkpoints/experiment_name`
 
 # Reference
-[https://github.com/switchablenorms/DeepFashion_Try_On](https://github.com/switchablenorms/DeepFashion_Try_On)
+* [https://github.com/switchablenorms/DeepFashion_Try_On](https://github.com/switchablenorms/DeepFashion_Try_On)
+* [Towards Photo-Realistic Virtual Try-On by Adaptively
+Generating↔Preserving Image Content](https://arxiv.org/pdf/2003.05863.pdf)
+* [VITON: An Image-based Virtual Try-on Network](https://openaccess.thecvf.com/content_cvpr_2018/papers/Han_VITON_An_Image-Based_CVPR_2018_paper.pdf)
