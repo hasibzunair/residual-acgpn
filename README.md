@@ -4,9 +4,9 @@
 
 * <s>Train ACGPN</s>
 * <s>Read data loader script</s>
-* Read train script
 * Read test script
 * Compute IS and SSIM
+* Read train script
 
 # Train model
 `python train.py --name experiment_name`
