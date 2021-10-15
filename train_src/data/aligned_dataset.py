@@ -20,7 +20,9 @@ class AlignedDataset(BaseDataset):
         if opt.isTrain or opt.use_encoded_image:
             dir_A = '_A' if self.opt.label_nc == 0 else '_label'
             self.dir_A = os.path.join(opt.dataroot, opt.phase + dir_A)
+            # All paths in train/test_label
             self.A_paths = sorted(make_dataset(self.dir_A))
+            # All paths in train/test_label but random
             self.AR_paths = make_dataset(self.dir_A)
 
         self.fine_height=256
@@ -40,7 +42,7 @@ class AlignedDataset(BaseDataset):
         self.dir_B = os.path.join(opt.dataroot, opt.phase + dir_B)  
         self.B_paths = sorted(make_dataset(self.dir_B))
         self.BR_paths = sorted(make_dataset(self.dir_B))
-
+        
         self.dataset_size = len(self.A_paths)
         self.build_index(self.B_paths)
 
@@ -64,6 +66,7 @@ class AlignedDataset(BaseDataset):
             self.dir_MC = os.path.join(opt.dataroot, opt.phase + dir_MC)
             self.MC_paths = sorted(make_dataset(self.dir_MC))
             self.MCR_paths = make_dataset(self.dir_MC)
+        
         ### input C(color)
         if opt.isTrain or opt.use_encoded_image:
             dir_C = '_color'
@@ -71,12 +74,15 @@ class AlignedDataset(BaseDataset):
             self.C_paths = sorted(make_dataset(self.dir_C))
             self.CR_paths = make_dataset(self.dir_C)
         # self.build_index(self.C_paths)
-
+        
+        
         ### input A test (label maps)
         if not (opt.isTrain or opt.use_encoded_image):
             dir_A = '_A' if self.opt.label_nc == 0 else '_label'
             self.dir_A = os.path.join(opt.dataroot, opt.phase + dir_A)
             self.A_paths = sorted(make_dataset_test(self.dir_A))
+            
+    
     def random_sample(self,item):
         name = item.split('/')[-1]
         name = name.split('-')[0]
@@ -86,6 +92,7 @@ class AlignedDataset(BaseDataset):
             if dir != item:
                 new_lst.append(dir)
         return new_lst[np.random.randint(len(new_lst))]
+    
     def build_index(self,dirs):
         #ipdb.set_trace()
         for k,dir in enumerate(dirs):
@@ -102,8 +109,10 @@ class AlignedDataset(BaseDataset):
                         self.diction[name].append(d)
 
 
-    def __getitem__(self, index):        
+    def __getitem__(self, index):
         train_mask=9600
+        #ipdb.set_trace()
+        
         ### input A (label maps)
         # box=[]
         # for k,x in enumerate(self.A_paths):
@@ -113,6 +122,7 @@ class AlignedDataset(BaseDataset):
         test=index#np.random.randint(10000)
         A_path = self.A_paths[index]
         AR_path = self.AR_paths[index]
+        # Read labels
         A = Image.open(A_path).convert('L')
         AR = Image.open(AR_path).convert('L')
 
