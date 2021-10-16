@@ -8,6 +8,7 @@
 * Make reference cloth and person cloth same in dataloader
 * Compute IS and SSIM
 * Read train script
+* Evaluate VITON, CV-VTON and ACGPN (use pretrained models)
 
 # Train model
 `python train.py --name experiment_name`
