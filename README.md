@@ -9,6 +9,8 @@
 * Compute IS and SSIM
 * Read train script
 * Evaluate VITON, CV-VTON and ACGPN (use pretrained models)
+* Residual U-Net
+* STN [https://github.com/WarBean/tps_stn_pytorch](https://github.com/WarBean/tps_stn_pytorch)
 
 # Train model
 `python train.py --name experiment_name`
