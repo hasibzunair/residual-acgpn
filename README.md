@@ -4,10 +4,10 @@
 
 * <s>Train ACGPN</s>
 * <s>Read data loader script</s>
-* <s>Read test script </s>
-* <s>Make reference cloth and person cloth same in dataloader  </s>
-* <s>Compute SSIM </s>
-* Compute IS 
+* <s>Read test script</s>
+* <s>Make reference cloth and person cloth same in dataloader</s>
+* <s>Compute FID</s>
+* Compute SSIM 
 * Read train script
 * Evaluate VITON, CV-VTON and ACGPN (use pretrained models)
 * Residual U-Net
