@@ -5,8 +5,9 @@
 * <s>Train ACGPN</s>
 * <s>Read data loader script</s>
 * <s>Read test script </s>
-* Make reference cloth and person cloth same in dataloader
-* Compute IS and SSIM
+* <s>Make reference cloth and person cloth same in dataloader  </s>
+* <s>Compute SSIM </s>
+* Compute IS 
 * Read train script
 * Evaluate VITON, CV-VTON and ACGPN (use pretrained models)
 * Residual U-Net
@@ -19,6 +20,10 @@ Copy checkpoint folder `experiment_name` to ACGPN_inference
 
 # Run inference
 `python test.py --load_pretrain ./checkpoints/experiment_name`
+
+# Compute FID
+Install using `pip install pytorch-fid`.
+Run `python -m pytorch_fid path/to/dataset1 path/to/dataset2` to get FID scores.
 
 # Reference
 * [https://github.com/switchablenorms/DeepFashion_Try_On](https://github.com/switchablenorms/DeepFashion_Try_On)

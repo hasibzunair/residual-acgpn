@@ -102,17 +102,11 @@ class AlignedDataset(BaseDataset):
         train_mask=9600
         ### input A (label maps)
         box=[]
-        
         # for k,x in enumerate(self.A_paths):
         #     if '000386' in x :
         #         index=k
         #         break
-        
-        # for random try on cloth
-        #test=np.random.randint(2032)
-        # for same try on cloth
-        
-        test=index
+        test=np.random.randint(2032)
         # for k, s in enumerate(self.B_paths):
         #    if '006581' in s:
         #        test = k
