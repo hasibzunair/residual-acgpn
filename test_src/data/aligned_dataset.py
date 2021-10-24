@@ -108,11 +108,13 @@ class AlignedDataset(BaseDataset):
         #         index=k
         #         break
         
+        ##################################################################
         # for random try on cloth
         #test=np.random.randint(2032)
         # for same try on cloth
-        
         test=index
+        ##################################################################
+        
         # for k, s in enumerate(self.B_paths):
         #    if '006581' in s:
         #        test = k

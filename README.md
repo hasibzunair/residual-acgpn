@@ -7,7 +7,7 @@
 * <s>Read test script</s>
 * <s>Make reference cloth and person cloth same in dataloader</s>
 * <s>Compute FID</s>
-* Compute SSIM 
+* <s>Compute SSIM</s>
 * Read train script
 * Evaluate VITON, CV-VTON and ACGPN (use pretrained models)
 * Residual U-Net
@@ -30,3 +30,5 @@ Run `python -m pytorch_fid path/to/dataset1 path/to/dataset2` to get FID scores.
 * [Towards Photo-Realistic Virtual Try-On by Adaptively
 Generating↔Preserving Image Content](https://arxiv.org/pdf/2003.05863.pdf)
 * [VITON: An Image-based Virtual Try-on Network](https://openaccess.thecvf.com/content_cvpr_2018/papers/Han_VITON_An_Image-Based_CVPR_2018_paper.pdf)
+* FID score computed using [https://github.com/mseitzer/pytorch-fid](https://github.com/mseitzer/pytorch-fid)
+* SSIM score computed using [https://github.com/Po-Hsun-Su/pytorch-ssim](https://github.com/Po-Hsun-Su/pytorch-ssim)
