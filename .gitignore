@@ -4,9 +4,11 @@
 datasets/
 checkpoints/
 runs/
+samples/
+tryons/
+sample/
 
 *.pth
-*.jpg
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
