@@ -5,8 +5,8 @@ Generating↔Preserving Image Content ([Paper](https://arxiv.org/pdf/2003.05863.
 
 # TODO
 
-* Read train script
 * Residual U-Net, https://github.com/nikhilroxtomar/Semantic-Segmentation-Architecture
+* Read train script
 * STN [https://github.com/WarBean/tps_stn_pytorch](https://github.com/WarBean/tps_stn_pytorch)
 * Evaluate VITON, CV-VTON and ACGPN (use pretrained models)
 
