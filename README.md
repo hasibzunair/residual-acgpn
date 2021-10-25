@@ -1,4 +1,7 @@
-# Virtual try-on project.
+# COMP 6321 Project
+
+This code is built on top of Towards Photo-Realistic Virtual Try-On by Adaptively
+Generating↔Preserving Image Content ([Paper](https://arxiv.org/pdf/2003.05863.pdf), [Code](https://github.com/switchablenorms/DeepFashion_Try_On))
 
 # TODO
 
@@ -20,9 +23,4 @@ Install using `pip install pytorch-fid`.
 Run `python -m pytorch_fid path/to/dataset1 path/to/dataset2` to get FID scores.
 
 # Reference
-* [https://github.com/switchablenorms/DeepFashion_Try_On](https://github.com/switchablenorms/DeepFashion_Try_On)
-* [Towards Photo-Realistic Virtual Try-On by Adaptively
-Generating↔Preserving Image Content](https://arxiv.org/pdf/2003.05863.pdf)
-* [VITON: An Image-based Virtual Try-on Network](https://openaccess.thecvf.com/content_cvpr_2018/papers/Han_VITON_An_Image-Based_CVPR_2018_paper.pdf)
-* FID score computed using [https://github.com/mseitzer/pytorch-fid](https://github.com/mseitzer/pytorch-fid)
-* SSIM score computed using [https://github.com/Po-Hsun-Su/pytorch-ssim](https://github.com/Po-Hsun-Su/pytorch-ssim)
+* SSIM and FID scores computed using [https://github.com/Po-Hsun-Su/pytorch-ssim](https://github.com/Po-Hsun-Su/pytorch-ssim) and [https://github.com/mseitzer/pytorch-fid](https://github.com/mseitzer/pytorch-fid)
