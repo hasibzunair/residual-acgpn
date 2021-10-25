@@ -3,9 +3,9 @@
 # TODO
 
 * Read train script
-* Evaluate VITON, CV-VTON and ACGPN (use pretrained models)
-* Residual U-Net
+* Residual U-Net, https://github.com/nikhilroxtomar/Semantic-Segmentation-Architecture
 * STN [https://github.com/WarBean/tps_stn_pytorch](https://github.com/WarBean/tps_stn_pytorch)
+* Evaluate VITON, CV-VTON and ACGPN (use pretrained models)
 
 # Train model
 `python train.py --name experiment_name`
