@@ -64,12 +64,13 @@ def define_Unet(input_nc, gpu_ids=[]):
     netG.apply(weights_init)
     return netG
 
-
+####################################################
 def define_UnetMask(input_nc, gpu_ids=[]):
     netG = UnetMask(input_nc,output_nc=4)
     netG.cuda(gpu_ids[0])
     netG.apply(weights_init)
     return netG
+####################################################
 
 def define_Refine(input_nc, output_nc, gpu_ids=[]):
     netG = Refine(input_nc, output_nc)
@@ -461,6 +462,8 @@ class AttentionNorm(nn.Module):
         attended = self.conv(attended)
         output = attended + unattended
         return output
+    
+#########################################
 class UnetMask(nn.Module):
     def __init__(self, input_nc, output_nc=3):
         super(UnetMask, self).__init__()
@@ -518,6 +521,7 @@ class UnetMask(nn.Module):
     def forward(self, input, refer, mask):
         input, warped_mask,rx,ry,cx,cy,rg,cg = self.stn(input, torch.cat([mask, refer, input], 1), mask)
         #ipdb.set_trace()# print(input.shape)
+        ipdb.set_trace()
 
         conv1 = self.conv1(torch.cat([refer.detach(), input.detach()], 1))
         pool1 = self.pool1(conv1)
@@ -547,7 +551,8 @@ class UnetMask(nn.Module):
         up9 = self.up9(conv8)
         conv9 = self.conv9(torch.cat([conv1, up9], 1))
         return conv9, input, warped_mask,rx,ry,cx,cy,rg,cg
-
+###################################
+    
 class Unet(nn.Module):
     def __init__(self, input_nc, output_nc=3):
         super(Unet, self).__init__()
