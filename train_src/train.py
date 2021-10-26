@@ -87,8 +87,9 @@ def changearm(old_label):
     label=label*(1-noise)+noise*4
     return label
 
-os.makedirs('sample',exist_ok=True)
+#os.makedirs('sample',exist_ok=True)
 opt = TrainOptions().parse()
+print("Experiment name: {}".format(opt.name))
 iter_path = os.path.join(opt.checkpoints_dir, opt.name, 'iter.txt')
 log_path = os.path.join(opt.checkpoints_dir, opt.name, 'log.txt')
 log_file = open(log_path, 'a')
@@ -198,7 +199,7 @@ for epoch in range(start_epoch, opt.niter + opt.niter_decay + 1):
             writer.add_image('combine', (combine.data + 1) / 2.0, step)
             rgb=(cv_img*255).astype(np.uint8)
             bgr=cv2.cvtColor(rgb,cv2.COLOR_RGB2BGR)
-            cv2.imwrite('sample/test'+str(step)+'.jpg',bgr)
+            #cv2.imwrite('sample/test'+str(step)+'.jpg',bgr)
 
         step += 1
         iter_end_time = time.time()
@@ -219,8 +220,8 @@ for epoch in range(start_epoch, opt.niter + opt.niter_decay + 1):
         
         # subsample dataset
         # for full data use 'dataset_size'
-        # Using 5000 for 6381 project
-        if epoch_iter >= 100:
+        # Using 5000 for 6321 project
+        if epoch_iter >= 5000:
             break
        
     # end of epoch 
