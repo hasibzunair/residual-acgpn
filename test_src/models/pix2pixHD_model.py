@@ -145,7 +145,7 @@ class Pix2PixHDModel(BaseModel):
         # Main Generator
         with torch.no_grad():
             self.Unet = networks.define_UnetMask(4, self.gpu_ids).eval()
-            self.G1 = networks.define_Refine(37, 14, self.gpu_ids).eval()
+            self.G1 = networks.define_Refine_ResUnet(37, 14, self.gpu_ids).eval()
             self.G2 = networks.define_Refine(19+18, 1, self.gpu_ids).eval()
             self.G = networks.define_Refine(24, 3, self.gpu_ids).eval()
 
