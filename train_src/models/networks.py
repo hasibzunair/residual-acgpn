@@ -81,7 +81,7 @@ def define_Refine(input_nc, output_nc, gpu_ids=[]):
 ####################################################
 def define_Refine_ResUnet(input_nc, output_nc, gpu_ids=[]):
     #ipdb.set_trace()
-    netG = Refine_ResUnet(input_nc, output_nc)
+    netG = Refine_ResUnet_New(input_nc, output_nc)
     #ipdb.set_trace()
     netG.cuda(gpu_ids[0])
     netG.apply(weights_init)
@@ -765,105 +765,215 @@ class Refine(nn.Module):
         return conv9
 
 
-class batchnorm_relu(nn.Module):
-    def __init__(self, in_c):
-        super().__init__()
+# class batchnorm_relu(nn.Module):
+#     def __init__(self, in_c):
+#         super().__init__()
 
-        self.bn = nn.BatchNorm2d(in_c)
-        self.relu = nn.ReLU()
+#         self.bn = nn.BatchNorm2d(in_c)
+#         self.relu = nn.ReLU()
 
-    def forward(self, inputs):
-        x = self.bn(inputs)
-        x = self.relu(x)
-        return x
+#     def forward(self, inputs):
+#         x = self.bn(inputs)
+#         x = self.relu(x)
+#         return x
 
-class residual_block(nn.Module):
-    def __init__(self, in_c, out_c, stride=1):
-        super().__init__()
+# class residual_block(nn.Module):
+#     def __init__(self, in_c, out_c, stride=1):
+#         super().__init__()
 
-        """ Convolutional layer """
-        self.b1 = batchnorm_relu(in_c)
-        self.c1 = nn.Conv2d(in_c, out_c, kernel_size=3, padding=1, stride=stride)
-        self.b2 = batchnorm_relu(out_c)
-        self.c2 = nn.Conv2d(out_c, out_c, kernel_size=3, padding=1, stride=1)
+#         """ Convolutional layer """
+#         self.b1 = batchnorm_relu(in_c)
+#         self.c1 = nn.Conv2d(in_c, out_c, kernel_size=3, padding=1, stride=stride)
+#         self.b2 = batchnorm_relu(out_c)
+#         self.c2 = nn.Conv2d(out_c, out_c, kernel_size=3, padding=1, stride=1)
 
-        """ Shortcut Connection (Identity Mapping) """
-        self.s = nn.Conv2d(in_c, out_c, kernel_size=1, padding=0, stride=stride)
+#         """ Shortcut Connection (Identity Mapping) """
+#         self.s = nn.Conv2d(in_c, out_c, kernel_size=1, padding=0, stride=stride)
 
-    def forward(self, inputs):
-        x = self.b1(inputs)
-        x = self.c1(x)
-        x = self.b2(x)
-        x = self.c2(x)
-        s = self.s(inputs)
+#     def forward(self, inputs):
+#         x = self.b1(inputs)
+#         x = self.c1(x)
+#         x = self.b2(x)
+#         x = self.c2(x)
+#         s = self.s(inputs)
 
-        skip = x + s
-        return skip
+#         skip = x + s
+#         return skip
 
-class decoder_block(nn.Module):
-    def __init__(self, in_c, out_c):
-        super().__init__()
+# class decoder_block(nn.Module):
+#     def __init__(self, in_c, out_c):
+#         super().__init__()
 
-        self.upsample = nn.Upsample(scale_factor=2, mode="bilinear", align_corners=True)
-        self.r = residual_block(in_c+out_c, out_c)
+#         self.upsample = nn.Upsample(scale_factor=2, mode="bilinear", align_corners=True)
+#         self.r = residual_block(in_c+out_c, out_c)
 
-    def forward(self, inputs, skip):
-        x = self.upsample(inputs)
-        x = torch.cat([x, skip], axis=1)
-        x = self.r(x)
-        return x
+#     def forward(self, inputs, skip):
+#         x = self.upsample(inputs)
+#         x = torch.cat([x, skip], axis=1)
+#         x = self.r(x)
+#         return x
 
-# ResUnet Generator
-###########################################################################################
-class Refine_ResUnet(nn.Module):
-    def __init__(self, input_nc, output_nc=3):
-        super().__init__()
+# # ResUnet Generator
+# ########################################################################################### Poor result :( 
+# class Refine_ResUnet(nn.Module):
+#     def __init__(self, input_nc, output_nc=3):
+#         super().__init__()
 
-        """ Encoder 1 """
-        self.c11 = nn.Conv2d(37, 64, kernel_size=3, padding=1)
-        self.br1 = batchnorm_relu(64)
-        self.c12 = nn.Conv2d(64, 64, kernel_size=3, padding=1)
-        self.c13 = nn.Conv2d(37, 64, kernel_size=1, padding=0)
+#         """ Encoder 1 """
+#         self.c11 = nn.Conv2d(37, 64, kernel_size=3, padding=1)
+#         self.br1 = batchnorm_relu(64)
+#         self.c12 = nn.Conv2d(64, 64, kernel_size=3, padding=1)
+#         self.c13 = nn.Conv2d(37, 64, kernel_size=1, padding=0)
 
-        """ Encoder 2 and 3 """
-        self.r2 = residual_block(64, 128, stride=2)
-        self.r3 = residual_block(128, 256, stride=2)
+#         """ Encoder 2 and 3 """
+#         self.r2 = residual_block(64, 128, stride=2)
+#         self.r3 = residual_block(128, 256, stride=2)
 
-        """ Bridge """
-        self.r4 = residual_block(256, 512, stride=2)
+#         """ Bridge """
+#         self.r4 = residual_block(256, 512, stride=2)
 
-        """ Decoder """
-        self.d1 = decoder_block(512, 256)
-        self.d2 = decoder_block(256, 128)
-        self.d3 = decoder_block(128, 64)
+#         """ Decoder """
+#         self.d1 = decoder_block(512, 256)
+#         self.d2 = decoder_block(256, 128)
+#         self.d3 = decoder_block(128, 64)
 
-        """ Output """
-        self.output = nn.Conv2d(64, 14, kernel_size=1, padding=0)
+#         """ Output """
+#         self.output = nn.Conv2d(64, 14, kernel_size=1, padding=0)
 
+#     def refine(self, input):
+#         """ Encoder 1 """
+#         x = self.c11(input)
+#         x = self.br1(x)
+#         x = self.c12(x)
+#         s = self.c13(input)
+#         skip1 = x + s
+
+#         """ Encoder 2 and 3 """
+#         skip2 = self.r2(skip1)
+#         skip3 = self.r3(skip2)
+
+#         """ Bridge """
+#         b = self.r4(skip3)
+
+#         """ Decoder """
+#         d1 = self.d1(b, skip3)
+#         d2 = self.d2(d1, skip2)
+#         d3 = self.d3(d2, skip1)
+
+#         """ output """
+#         output = self.output(d3)
+#         return output
+
+###### ResUnet new
+class ResidualBlock(nn.Module):
+    def __init__(self, in_features=64, norm_layer=nn.BatchNorm2d):
+        super(ResidualBlock, self).__init__()
+        self.relu = nn.ReLU(True)
+        if norm_layer == None:
+            self.block = nn.Sequential(
+                nn.Conv2d(in_features, in_features, 3, 1, 1, bias=False),
+                nn.ReLU(inplace=True),
+                nn.Conv2d(in_features, in_features, 3, 1, 1, bias=False),
+            )
+        else:
+            self.block = nn.Sequential(
+                nn.Conv2d(in_features, in_features, 3, 1, 1, bias=False),
+                norm_layer(in_features),
+                nn.ReLU(inplace=True),
+                nn.Conv2d(in_features, in_features, 3, 1, 1, bias=False),
+                norm_layer(in_features)
+            )
+
+    def forward(self, x):
+        residual = x
+        out = self.block(x)
+        out += residual
+        out = self.relu(out)
+        return out
+
+
+class Refine_ResUnet_New(nn.Module):
+    def __init__(self, input_nc, output_nc, num_downs=5, ngf=32,
+                 norm_layer=nn.BatchNorm2d, use_dropout=False):
+        super(Refine_ResUnet_New, self).__init__()
+        # construct unet structure
+        unet_block = ResUnetSkipConnectionBlock(ngf * 8, ngf * 8, input_nc=None, submodule=None, norm_layer=norm_layer, innermost=True)
+
+        for i in range(num_downs - 5):
+            unet_block = ResUnetSkipConnectionBlock(ngf * 8, ngf * 8, input_nc=None, submodule=unet_block, norm_layer=norm_layer, use_dropout=use_dropout)
+        unet_block = ResUnetSkipConnectionBlock(ngf * 4, ngf * 8, input_nc=None, submodule=unet_block, norm_layer=norm_layer)
+        unet_block = ResUnetSkipConnectionBlock(ngf * 2, ngf * 4, input_nc=None, submodule=unet_block, norm_layer=norm_layer)
+        unet_block = ResUnetSkipConnectionBlock(ngf, ngf * 2, input_nc=None, submodule=unet_block, norm_layer=norm_layer)
+        unet_block = ResUnetSkipConnectionBlock(output_nc, ngf, input_nc=input_nc, submodule=unet_block, outermost=True, norm_layer=norm_layer)
+        
+        self.model = unet_block
+        
     def refine(self, input):
-        """ Encoder 1 """
-        x = self.c11(input)
-        x = self.br1(x)
-        x = self.c12(x)
-        s = self.c13(input)
-        skip1 = x + s
+        return self.model(input)
 
-        """ Encoder 2 and 3 """
-        skip2 = self.r2(skip1)
-        skip3 = self.r3(skip2)
 
-        """ Bridge """
-        b = self.r4(skip3)
+# Defines the submodule with skip connection.
+# X -------------------identity---------------------- X
+#   |-- downsampling -- |submodule| -- upsampling --|
+class ResUnetSkipConnectionBlock(nn.Module):
+    def __init__(self, outer_nc, inner_nc, input_nc=None,
+                 submodule=None, outermost=False, innermost=False, norm_layer=nn.BatchNorm2d, use_dropout=False):
+        super(ResUnetSkipConnectionBlock, self).__init__()
+        self.outermost = outermost
+        use_bias = norm_layer == nn.InstanceNorm2d
 
-        """ Decoder """
-        d1 = self.d1(b, skip3)
-        d2 = self.d2(d1, skip2)
-        d3 = self.d3(d2, skip1)
+        if input_nc is None:
+            input_nc = outer_nc
+        downconv = nn.Conv2d(input_nc, inner_nc, kernel_size=3,
+                             stride=2, padding=1, bias=use_bias)
+        # add two resblock
+        res_downconv = [ResidualBlock(inner_nc, norm_layer), ResidualBlock(inner_nc, norm_layer)]
+        res_upconv = [ResidualBlock(outer_nc, norm_layer), ResidualBlock(outer_nc, norm_layer)]
 
-        """ output """
-        output = self.output(d3)
-        return output
+        downrelu = nn.ReLU(True)
+        uprelu = nn.ReLU(True)
+        if norm_layer != None:
+            downnorm = norm_layer(inner_nc)
+            upnorm = norm_layer(outer_nc)
 
+        if outermost:
+            upsample = nn.Upsample(scale_factor=2, mode='nearest')
+            upconv = nn.Conv2d(inner_nc * 2, outer_nc, kernel_size=3, stride=1, padding=1, bias=use_bias)
+            down = [downconv, downrelu] + res_downconv
+            up = [upsample, upconv]
+            model = down + [submodule] + up
+        elif innermost:
+            upsample = nn.Upsample(scale_factor=2, mode='nearest')
+            upconv = nn.Conv2d(inner_nc, outer_nc, kernel_size=3, stride=1, padding=1, bias=use_bias)
+            down = [downconv, downrelu] + res_downconv
+            if norm_layer == None:
+                up = [upsample, upconv, uprelu] + res_upconv
+            else:
+                up = [upsample, upconv, upnorm, uprelu] + res_upconv
+            model = down + up
+        else:
+            upsample = nn.Upsample(scale_factor=2, mode='nearest')
+            upconv = nn.Conv2d(inner_nc*2, outer_nc, kernel_size=3, stride=1, padding=1, bias=use_bias)
+            if norm_layer == None:
+                down = [downconv, downrelu] + res_downconv
+                up = [upsample, upconv, uprelu] + res_upconv
+            else:
+                down = [downconv, downnorm, downrelu] + res_downconv
+                up = [upsample, upconv, upnorm, uprelu] + res_upconv
+
+            if use_dropout:
+                model = down + [submodule] + up + [nn.Dropout(0.5)]
+            else:
+                model = down + [submodule] + up
+
+        self.model = nn.Sequential(*model)
+
+    def forward(self, x):
+        if self.outermost:
+            return self.model(x)
+        else:
+            return torch.cat([x, self.model(x)], 1)
+##################
 
 class GlobalGenerator(nn.Module):
     def __init__(self, input_nc, output_nc, L, S, ngf=64, n_downsampling=3, n_blocks=9, norm_layer=nn.BatchNorm2d,

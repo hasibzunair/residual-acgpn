@@ -99,7 +99,7 @@ class Pix2PixHDModel(BaseModel):
         self.perm=torch.randperm(1024*4)
         ##### define networks        
         # Generator network
-        netG_input_nc = input_nc        
+        netG_input_nc = input_nc
         # Main Generator
         with torch.no_grad():
             pass
