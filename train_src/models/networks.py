@@ -793,7 +793,7 @@ class ResidualBlock(nn.Module):
 
 
 class Refine_ResUnet_New(nn.Module):
-    def __init__(self, input_nc, output_nc, num_downs=5, ngf=48,
+    def __init__(self, input_nc, output_nc, num_downs=5, ngf=32,
                  norm_layer=nn.BatchNorm2d, use_dropout=False):
         super(Refine_ResUnet_New, self).__init__()
         # construct unet structure
