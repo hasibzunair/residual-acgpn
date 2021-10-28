@@ -8,6 +8,8 @@ import numpy as np
 import os.path as osp
 from PIL import ImageDraw
 
+np.random.seed(50)
+
 class AlignedDataset(BaseDataset):
     def initialize(self, opt):
         self.opt = opt

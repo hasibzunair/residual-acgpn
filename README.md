@@ -4,6 +4,7 @@ This code is built on top of Towards Photo-Realistic Virtual Try-On by Adaptivel
 Generating↔Preserving Image Content ([Paper](https://arxiv.org/pdf/2003.05863.pdf), [Code](https://github.com/switchablenorms/DeepFashion_Try_On))
 
 # TODO
+* Evaluate on random cloths data
 * Read train script
 * STN [https://github.com/WarBean/tps_stn_pytorch](https://github.com/WarBean/tps_stn_pytorch)
 * Evaluate VITON, CV-VTON and ACGPN (use pretrained models)

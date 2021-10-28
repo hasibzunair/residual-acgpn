@@ -6,7 +6,9 @@ checkpoints/
 runs/
 samples/
 tryons/
+tryons_random/
 sample/
+samples_random/
 
 *.pth
 
