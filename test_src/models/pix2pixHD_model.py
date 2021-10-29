@@ -144,17 +144,17 @@ class Pix2PixHDModel(BaseModel):
         netG_input_nc = input_nc
         # Main Generator
         with torch.no_grad():
-#             # Load ACGPN model
-#             self.Unet = networks.define_UnetMask(4, self.gpu_ids).eval()
-#             self.G1 = networks.define_Refine(37, 14, self.gpu_ids).eval() 
-#             self.G2 = networks.define_Refine(19+18, 1, self.gpu_ids).eval()
-#             self.G = networks.define_Refine(24, 3, self.gpu_ids).eval()
-
-            # Load ResUnet in G1
+            # Load ACGPN model
             self.Unet = networks.define_UnetMask(4, self.gpu_ids).eval()
-            self.G1 = networks.define_Refine_ResUnet(37, 14, self.gpu_ids).eval()
+            self.G1 = networks.define_Refine(37, 14, self.gpu_ids).eval() 
             self.G2 = networks.define_Refine(19+18, 1, self.gpu_ids).eval()
             self.G = networks.define_Refine(24, 3, self.gpu_ids).eval()
+
+#             # Load ResUnet in G1
+#             self.Unet = networks.define_UnetMask(4, self.gpu_ids).eval()
+#             self.G1 = networks.define_Refine_ResUnet(37, 14, self.gpu_ids).eval()
+#             self.G2 = networks.define_Refine(19+18, 1, self.gpu_ids).eval()
+#             self.G = networks.define_Refine(24, 3, self.gpu_ids).eval()
 
         self.tanh = nn.Tanh()
         self.sigmoid = nn.Sigmoid()

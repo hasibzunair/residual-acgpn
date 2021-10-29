@@ -4,6 +4,7 @@
 datasets/
 checkpoints/
 runs/
+outs/
 samples/
 tryons/
 tryons_random/

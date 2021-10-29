@@ -8,7 +8,10 @@ import numpy as np
 import os.path as osp
 from PIL import ImageDraw
 
-np.random.seed(50)
+"""
+Generates random person image cloth pair. Random in the sense that the list of
+clothes is inverted. This is used for quality evaluation fo models.
+"""
 
 class AlignedDataset(BaseDataset):
     def initialize(self, opt):
@@ -47,7 +50,7 @@ class AlignedDataset(BaseDataset):
         if opt.isTrain or opt.use_encoded_image:
             dir_E = '_edge'
             self.dir_E = os.path.join(opt.dataroot, opt.phase + dir_E)
-            self.E_paths = sorted(make_dataset(self.dir_E))
+            self.E_paths = sorted(make_dataset(self.dir_E))[::-1]
             self.ER_paths = make_dataset(self.dir_E)
 
         ### input M (masks)
@@ -67,7 +70,7 @@ class AlignedDataset(BaseDataset):
         if opt.isTrain or opt.use_encoded_image:
             dir_C = '_color'
             self.dir_C = os.path.join(opt.dataroot, opt.phase + dir_C)
-            self.C_paths = sorted(make_dataset(self.dir_C))
+            self.C_paths = sorted(make_dataset(self.dir_C))[::-1] # for random cloth compare
             self.CR_paths = make_dataset(self.dir_C)
         # self.build_index(self.C_paths)
 
@@ -108,7 +111,7 @@ class AlignedDataset(BaseDataset):
         #     if '000386' in x :
         #         index=k
         #         break
-        test=np.random.randint(2032)
+        test= index #np.random.randint(2032)
         # for k, s in enumerate(self.B_paths):
         #    if '006581' in s:
         #        test = k
