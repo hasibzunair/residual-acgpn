@@ -106,8 +106,8 @@ class Pix2PixHDModel(BaseModel):
         self.Unet=networks.define_UnetMask(4,self.gpu_ids)
         # Use ResUnet generator
         self.G1 = networks.define_Refine_ResUnet(37,14,self.gpu_ids)
-        self.G2 = networks.define_Refine(19+18,1,self.gpu_ids)
-        self.G = networks.define_Refine(24,3,self.gpu_ids)
+        self.G2 = networks.define_Refine_ResUnet(19+18,1,self.gpu_ids)
+        self.G = networks.define_Refine_ResUnet(24,3,self.gpu_ids)
         #ipdb.set_trace()
         self.tanh=nn.Tanh()
         self.sigmoid=nn.Sigmoid()
