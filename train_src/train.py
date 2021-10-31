@@ -87,6 +87,10 @@ def changearm(old_label):
     label=label*(1-noise)+noise*4
     return label
 
+
+start_time = time.time()
+
+
 #os.makedirs('sample',exist_ok=True)
 opt = TrainOptions().parse()
 print("Experiment name: {}".format(opt.name))
@@ -243,3 +247,8 @@ for epoch in range(start_epoch, opt.niter + opt.niter_decay + 1):
     ### linearly decay learning rate after certain iterations
     if epoch > opt.niter:
         model.module.update_learning_rate()
+
+
+end_time = time.time()
+print("Done...")
+print("--- Time taken to train : %s hours ---" % ((end_time - start_time)//3600))

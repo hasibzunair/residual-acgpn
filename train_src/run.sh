@@ -21,7 +21,7 @@
 # Slurm output file
 #SBATCH --output=output.out
 
-# Setup environment
+# Setup working environment
 module load python/3.7
 module load scipy-stack
 
@@ -33,17 +33,19 @@ pip install numpy --no-index
 pip install --no-index torch
 pip install --no-index torch torchvision torchtext torchaudio
 
+pip install ipdb
+pip install opencv-python
+pip install tensorboardX
+
 # Activate env from folder
 # source /home/hasib/projects/def-abhamza/hasib/ENVS/tryon/bin/activate
 
 # Load CUDA and see GPUs
-module load arch/avx512 StdEnv/2018.3
+#module load arch/avx512 StdEnv/2018.3
 module load cuda cudnn
 nvidia-smi
 
 # Run test script
 python ./train.py  --name resunet_all --gpu_ids 0,1,2,3
 
-
 # srun --jobid 123456 --pty watch -n 30 nvidia-smi
-

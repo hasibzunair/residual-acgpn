@@ -12,6 +12,7 @@ sample/
 samples_random/
 
 *.pth
+*.output
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
