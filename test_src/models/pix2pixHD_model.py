@@ -102,6 +102,7 @@ class Pix2PixHDModel(BaseModel):
         return netD
 
     def cross_entropy2d(self, input, target, weight=None, size_average=True):
+        #import ipdb; ipdb.set_trace()
         n, c, h, w = input.size()
         nt, ht, wt = target.size()
 
@@ -301,6 +302,7 @@ class Pix2PixHDModel(BaseModel):
         arm_label = self.G1.refine(G1_in)
 
         arm_label = self.sigmoid(arm_label)
+        #import ipdb; ipdb.set_trace()
         CE_loss = self.cross_entropy2d(arm_label, (label * (1 - clothes_mask)).transpose(0, 1)[0].long()) * 10
 
         armlabel_map = generate_discrete_label(arm_label.detach(), 14, False)

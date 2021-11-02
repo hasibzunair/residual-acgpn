@@ -5,6 +5,7 @@ datasets/
 checkpoints/
 runs/
 outs/
+segs/
 samples/
 tryons/
 tryons_random/
