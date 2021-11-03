@@ -8,6 +8,10 @@ import numpy as np
 import os.path as osp
 from PIL import ImageDraw
 
+"""
+Load test data from .txt files: https://github.com/minar09/ACGPN/tree/master/Data_preprocessing
+"""
+
 class AlignedDataset(BaseDataset):
     def initialize(self, opt):
         self.opt = opt
@@ -23,6 +27,19 @@ class AlignedDataset(BaseDataset):
         self.fine_height=256
         self.fine_width=192
         self.radius=5
+        
+        # load data list from pairs file
+        human_names = []
+        cloth_names = []
+        with open(os.path.join(opt.dataroot, opt.datapairs), 'r') as f:
+            for line in f.readlines():
+                h_name, c_name = line.strip().split()
+                human_names.append(h_name)
+                cloth_names.append(c_name)
+        self.human_names = human_names
+        self.cloth_names = cloth_names
+        self.dataset_size = len(human_names)
+        
         ### input A test (label maps)
         if not (opt.isTrain or opt.use_encoded_image):
             dir_A = '_A' if self.opt.label_nc == 0 else '_label'
@@ -38,14 +55,14 @@ class AlignedDataset(BaseDataset):
         self.B_paths = sorted(make_dataset(self.dir_B))
         self.BR_paths = sorted(make_dataset(self.dir_B))
 
-        self.dataset_size = len(self.A_paths)
+        self.dataset_size = len(self.human_names)
         self.build_index(self.B_paths)
 
         ### input E (edge_maps)
         if opt.isTrain or opt.use_encoded_image:
             dir_E = '_edge'
             self.dir_E = os.path.join(opt.dataroot, opt.phase + dir_E)
-            self.E_paths = sorted(make_dataset(self.dir_E))
+            self.E_paths = sorted(make_dataset(self.dir_E))[::-1]
             self.ER_paths = make_dataset(self.dir_E)
 
         ### input M (masks)
@@ -65,7 +82,7 @@ class AlignedDataset(BaseDataset):
         if opt.isTrain or opt.use_encoded_image:
             dir_C = '_color'
             self.dir_C = os.path.join(opt.dataroot, opt.phase + dir_C)
-            self.C_paths = sorted(make_dataset(self.dir_C))
+            self.C_paths = sorted(make_dataset(self.dir_C))[::-1] # for random cloth compare
             self.CR_paths = make_dataset(self.dir_C)
         # self.build_index(self.C_paths)
 
@@ -102,24 +119,22 @@ class AlignedDataset(BaseDataset):
         train_mask=9600
         ### input A (label maps)
         box=[]
-        
         # for k,x in enumerate(self.A_paths):
         #     if '000386' in x :
         #         index=k
         #         break
-        
-        ##################################################################
-        # for random try on cloth
-        #test=np.random.randint(2032)
-        # for same try on cloth
-        test=index
-        ##################################################################
-        
+        test= index #np.random.randint(2032)
         # for k, s in enumerate(self.B_paths):
         #    if '006581' in s:
         #        test = k
         #        break
-        A_path = self.A_paths[index]
+        
+        # get names from the pairs file
+        c_name = self.cloth_names[index]
+        h_name = self.human_names[index]
+        
+        #A_path = self.A_paths[index]
+        A_path = osp.join(self.dir_A, h_name.replace(".jpg", ".png"))
         AR_path = self.AR_paths[index]
         A = Image.open(A_path).convert('L')
         AR = Image.open(AR_path).convert('L')
@@ -139,7 +154,8 @@ class AlignedDataset(BaseDataset):
         B_tensor = inst_tensor = feat_tensor = 0
         ### input B (real images)
 
-        B_path = self.B_paths[index]
+        #B_path = self.B_paths[index]
+        B_path = osp.join(self.dir_B, h_name)
         name=B_path.split('/')[-1]
 
 
@@ -165,12 +181,14 @@ class AlignedDataset(BaseDataset):
 
         ### input_C (color)
         # print(self.C_paths)
-        C_path = self.C_paths[test]
+        #C_path = self.C_paths[test]
+        C_path = osp.join(self.dir_C, c_name)
         C = Image.open(C_path).convert('RGB')
         C_tensor = transform_B(C)
 
         ##Edge
-        E_path = self.E_paths[test]
+        #E_path = self.E_paths[test]
+        E_path = osp.join(self.dir_E, c_name)
         # print(E_path)
         E = Image.open(E_path).convert('L')
         E_tensor = transform_A(E)
@@ -210,7 +228,7 @@ class AlignedDataset(BaseDataset):
         return input_dict
 
     def __len__(self):
-        return len(self.A_paths) // self.opt.batchSize * self.opt.batchSize
+        return len(self.human_names) // self.opt.batchSize * self.opt.batchSize
 
     def name(self):
         return 'AlignedDataset'

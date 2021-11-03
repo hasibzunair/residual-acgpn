@@ -8,6 +8,7 @@ Generating↔Preserving Image Content ([Paper](https://arxiv.org/pdf/2003.05863.
 * Do evaluation on easy medium hard
 * STN [https://github.com/WarBean/tps_stn_pytorch](https://github.com/WarBean/tps_stn_pytorch)
 * Evaluate VITON, CV-VTON and ACGPN (use pretrained models), atleast 2/3
+* https://github.com/minar09/cp-vton-plus
 
 
 # Train model
