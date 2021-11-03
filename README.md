@@ -4,6 +4,8 @@ This code is built on top of Towards Photo-Realistic Virtual Try-On by Adaptivel
 Generating↔Preserving Image Content ([Paper](https://arxiv.org/pdf/2003.05863.pdf), [Code](https://github.com/switchablenorms/DeepFashion_Try_On))
 
 # TODO
+* Vis part-seg and cloth seg
+* Vis and compare algo (vis notebook)
 * Read train script
 * <s> Do evaluation on easy medium hard </s>
 * STN [https://github.com/WarBean/tps_stn_pytorch](https://github.com/WarBean/tps_stn_pytorch)
