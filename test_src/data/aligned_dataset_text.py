@@ -9,7 +9,7 @@ import os.path as osp
 from PIL import ImageDraw
 
 """
-Easy hard etc
+Load data from txt files: https://github.com/minar09/ACGPN/tree/master/Data_preprocessing
 """
 
 class AlignedDataset(BaseDataset):
@@ -55,7 +55,7 @@ class AlignedDataset(BaseDataset):
         self.B_paths = sorted(make_dataset(self.dir_B))
         self.BR_paths = sorted(make_dataset(self.dir_B))
 
-        self.dataset_size = len(self.A_paths)
+        self.dataset_size = len(self.human_names)
         self.build_index(self.B_paths)
 
         ### input E (edge_maps)
@@ -154,7 +154,8 @@ class AlignedDataset(BaseDataset):
         B_tensor = inst_tensor = feat_tensor = 0
         ### input B (real images)
 
-        B_path = self.B_paths[index]
+        #B_path = self.B_paths[index]
+        B_path = osp.join(self.dir_B, h_name)
         name=B_path.split('/')[-1]
 
 
@@ -227,7 +228,7 @@ class AlignedDataset(BaseDataset):
         return input_dict
 
     def __len__(self):
-        return len(self.A_paths) // self.opt.batchSize * self.opt.batchSize
+        return len(self.human_names) // self.opt.batchSize * self.opt.batchSize
 
     def name(self):
         return 'AlignedDataset'
