@@ -5,7 +5,7 @@ Generating↔Preserving Image Content ([Paper](https://arxiv.org/pdf/2003.05863.
 
 # TODO
 
-* Vis part-seg and cloth seg
+* <s>Vis part-seg and cloth seg</s>
 * Vis and compare algo (vis notebook)
 * Read train script
 * <s> Do evaluation on easy medium hard </s>

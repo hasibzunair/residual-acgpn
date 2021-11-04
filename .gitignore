@@ -4,14 +4,8 @@
 datasets/
 checkpoints/
 runs/
-outs/
-segs/
+outputs
 samples/
-tryons/
-tryons_random/
-tryons_category/
-sample/
-samples_random/
 
 *.pth
 
