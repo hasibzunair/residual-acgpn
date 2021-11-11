@@ -1,4 +1,4 @@
-## Photo-realistic virtual try-on using Residual ACGPN.
+# Photo-realistic virtual try-on using Residual ACGPN
 
 A course project for COMP 6321 Machine Learning, Fall 2021.
 
