@@ -29,18 +29,18 @@ datasets/
 -------------------try_on_testing/
 ```
     
-## Train model
+## Train Residual ACGPN
 
 Download [vgg19-dcbb9e9d.pth](https://github.com/hasibzunair/residual-acgpn/releases/download/tag/v0.1/vgg19-dcbb9e9d.pth) and keep it in `train_src/models` folder. Then go to `train_src` and run:
 
 ```sh
-python train.py --name experiment_name
+python train.py --name res-acgpn
 ```
     
 ## Test model
 Go to `test_src` and run:
 ```sh
-python test.py --load_pretrain ./checkpoints/experiment_name`
+python test.py --load_pretrain ./checkpoints/res-acgpn
 ```
 
 ## Reference
