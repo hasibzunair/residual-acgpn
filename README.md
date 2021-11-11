@@ -2,8 +2,8 @@
 
 A course project for COMP 6321 Machine Learning, Fall 2021.
 
-This work is built on top of Towards Photo-Realistic Virtual Try-On by Adaptively
-Generating↔Preserving Image Content ([Paper](https://arxiv.org/pdf/2003.05863.pdf), [Code](https://github.com/switchablenorms/DeepFashion_Try_On)).
+This work is built on top of CVPR 2020 paper *Towards Photo-Realistic Virtual Try-On by Adaptively
+Generating↔Preserving Image Content* ([Paper](https://arxiv.org/pdf/2003.05863.pdf), [Code](https://github.com/switchablenorms/DeepFashion_Try_On)).
 
 A colab demo is available at https://github.com/hasibzunair/residual-acgpn-demo. Project report is available [here](WILL_BE_ADDED).
 
