@@ -13,7 +13,7 @@
 # time (DD-HH:MM)
 
 # Run for a day
-#SBATCH --time=5-00:00 
+#SBATCH --time=2-00:00 
 
 # Run less than a day
 # SBATCH --time=0-03:00 
