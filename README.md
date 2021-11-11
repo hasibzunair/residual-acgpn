@@ -24,7 +24,7 @@ Get the training and test datasets from https://github.com/switchablenorms/DeepF
     
 ## Train model
 
-Download `vgg19-dcbb9e9d.pth` from [here](https://github.com/hasibzunair/residual-acgpn/releases/tag/v0.1) and keep it in `train_src/models` folder. Then go to `train_src` and run:
+Download [vgg19-dcbb9e9d.pth](https://github.com/hasibzunair/residual-acgpn/releases/download/tag/v0.1/vgg19-dcbb9e9d.pth) and keep it in `train_src/models` folder. Then go to `train_src` and run:
 
 ```sh
 python train.py --name experiment_name
