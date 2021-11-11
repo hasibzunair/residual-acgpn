@@ -23,7 +23,8 @@ OR run `conda env create -f <environment-name>.yml`.
 Get the training and test datasets from https://github.com/switchablenorms/DeepFashion_Try_On.
     
 ## Train model
-Go to `train_src` and run:
+
+Download `vgg19-dcbb9e9d.pth` from [here](https://github.com/hasibzunair/residual-acgpn/releases/tag/v0.1) and keep it in `train_src/models` folder. Then go to `train_src` and run:
 
 ```sh
 python train.py --name experiment_name
