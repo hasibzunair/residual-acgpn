@@ -1,4 +1,6 @@
-## Course Project for Fall 2021 COMP 6321 Machine Learning
+## Photo-realistic virtual try-on using deep residual networks.
+
+A course project for COMP 6321 Machine Learning, Fall 2021.
 
 This work is built on top of Towards Photo-Realistic Virtual Try-On by Adaptively
 Generating↔Preserving Image Content ([Paper](https://arxiv.org/pdf/2003.05863.pdf), [Code](https://github.com/switchablenorms/DeepFashion_Try_On)).
