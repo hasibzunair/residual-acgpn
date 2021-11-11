@@ -20,7 +20,14 @@ OR run `conda env create -f <environment-name>.yml`.
 
 ## Data
     
-Get the training and test datasets from https://github.com/switchablenorms/DeepFashion_Try_On.
+Get the training and test datasets from https://github.com/switchablenorms/DeepFashion_Try_On. Make a folder named `datasets/acgpn_data` and put them there. Data directory tree will look like:
+
+```
+datasets/
+        acgpn_data/
+                    try_on_training/
+                    try_on_testing/
+```
     
 ## Train model
 
