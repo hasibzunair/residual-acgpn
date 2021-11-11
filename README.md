@@ -1,3 +1,5 @@
+In server!
+
 # COMP 6321 Project
 
 This code is built on top of Towards Photo-Realistic Virtual Try-On by Adaptively
