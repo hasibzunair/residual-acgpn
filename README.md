@@ -44,5 +44,4 @@ python test.py --load_pretrain ./checkpoints/res-acgpn
 ```
 
 ## Reference
-* 
 * SSIM and FID scores computed using [https://github.com/Po-Hsun-Su/pytorch-ssim](https://github.com/Po-Hsun-Su/pytorch-ssim) and [https://github.com/mseitzer/pytorch-fid](https://github.com/mseitzer/pytorch-fid)
