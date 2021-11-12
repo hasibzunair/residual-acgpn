@@ -2,6 +2,15 @@
 
 A course project for COMP 6321 Machine Learning, Fall 2021.
 
+<p align="center">
+    <a href="#"><img src="./media/vis.png"></a> <br />
+    <em>
+    Figure 1. Illustration of the proposed Sharp Block.
+    </em>
+</p>
+
+
+
 This work is built on top of CVPR 2020 paper *Towards Photo-Realistic Virtual Try-On by Adaptively
 Generating↔Preserving Image Content* ([Paper](https://arxiv.org/pdf/2003.05863.pdf), [Code](https://github.com/switchablenorms/DeepFashion_Try_On)).
 
