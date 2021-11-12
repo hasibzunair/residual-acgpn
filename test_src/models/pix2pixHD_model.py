@@ -358,7 +358,7 @@ class Pix2PixHDModel(BaseModel):
 
         return [self.loss_filter(loss_G_GAN, 0, loss_G_VGG, loss_D_real, loss_D_fake), fake_image,
                 clothes, arm_label
-            , L1_loss, style_loss, fake_cl, CE_loss,real_image,warped_grid, clothes_mask]
+            , L1_loss, style_loss, fake_cl, CE_loss,real_image,warped_grid, clothes_mask, warped, fake_c]
 
     def inference(self, label, label_ref, image_ref):
 
