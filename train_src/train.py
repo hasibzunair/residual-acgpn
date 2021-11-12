@@ -87,9 +87,8 @@ def changearm(old_label):
     label=label*(1-noise)+noise*4
     return label
 
-
+print("Starting training....")
 start_time = time.time()
-
 
 #os.makedirs('sample',exist_ok=True)
 opt = TrainOptions().parse()
@@ -225,7 +224,7 @@ for epoch in range(start_epoch, opt.niter + opt.niter_decay + 1):
         # subsample dataset
         # for full data use 'dataset_size'
         # Using 5000 for 6321 project
-        if epoch_iter >= 5000:
+        if epoch_iter >= dataset_size:
             break
        
     # end of epoch 
@@ -251,4 +250,5 @@ for epoch in range(start_epoch, opt.niter + opt.niter_decay + 1):
 
 end_time = time.time()
 print("Done...")
+print("--- Time taken to train : %s mins ---" % ((end_time - start_time)//60))
 print("--- Time taken to train : %s hours ---" % ((end_time - start_time)//3600))

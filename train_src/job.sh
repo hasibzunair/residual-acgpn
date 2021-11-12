@@ -7,14 +7,15 @@
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:v100:4 # 8
 #SBATCH --cpus-per-task=12 # 23
-#SBATCH --mem=8G
+#SBATCH --mem=16G
 
 # Specify time
 # time (DD-HH:MM)
 
 # Run for a day
-#SBATCH --time=2-00:00 
+#SBATCH --time=5-00:00 
 
+# NOT USING THIS
 # Run less than a day
 # SBATCH --time=0-03:00 
 
@@ -46,6 +47,8 @@ module load cuda cudnn
 nvidia-smi
 
 # Run test script
-python ./train.py  --name resunet_all --gpu_ids 0,1,2,3
+python ./train.py  --name resunet_g1 --gpu_ids 0,1,2,3,4,5,6,7 --batchSize 8
 
+# See GPU usage in job
+# sq -i 5
 # srun --jobid 123456 --pty watch -n 30 nvidia-smi
