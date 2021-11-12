@@ -3,9 +3,9 @@
 A course project for COMP 6321 Machine Learning, Fall 2021.
 
 <p align="center">
-    <a href="#"><img src="./media/vis.png"></a> <br />
+    <a href="#"><img src="./media/vis.png"></a> <br/>
     <em>
-    Figure 1. Illustration of the proposed Sharp Block.
+    Figure 1. Comparing the proposed method with other recent try-on methods.
     </em>
 </p>
 
