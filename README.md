@@ -33,9 +33,9 @@ Get the training and test datasets from https://github.com/switchablenorms/DeepF
 
 ```
 datasets/
---------acgpn_data/
--------------------try_on_training/
--------------------try_on_testing/
+    acgpn_data/
+        try_on_training/
+        try_on_testing/
 ```
     
 ## Train Residual ACGPN
