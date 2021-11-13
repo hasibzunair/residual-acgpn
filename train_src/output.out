@@ -1,0 +1,412 @@
+created virtual environment CPython3.7.9.final.0-64 in 818ms
+  creator CPython3Posix(dest=/local/hasib.54324096.0/env, clear=False, global=False)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=/home/hasib/.local/share/virtualenv/seed-app-data/v1.0.1)
+  activators BashActivator,CShellActivator,FishActivator,PowerShellActivator,PythonActivator,XonshActivator
+Ignoring pip: markers 'python_version < "3"' don't match your environment
+Looking in links: /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/pip-21.2.3+computecanada-py3-none-any.whl
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 20.0.2
+    Uninstalling pip-20.0.2:
+      Successfully uninstalled pip-20.0.2
+Successfully installed pip-21.2.3+computecanada
+Looking in links: /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic
+Requirement already satisfied: numpy in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2021a/lib/python3.7/site-packages (1.21.0+computecanada)
+Looking in links: /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2/torch-1.10.0+computecanada-cp37-cp37m-linux_x86_64.whl
+Requirement already satisfied: typing-extensions in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2021a/lib/python3.7/site-packages (from torch) (3.10.0.0+computecanada)
+Installing collected packages: torch
+Successfully installed torch-1.10.0+computecanada
+Looking in links: /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic
+Requirement already satisfied: torch in /local/hasib.54324096.0/env/lib/python3.7/site-packages (1.10.0+computecanada)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/torchvision-0.11.1+computecanada-cp37-cp37m-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/torchtext-0.11.0+computecanada-cp37-cp37m-linux_x86_64.whl
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/torchaudio-0.10.0+computecanada-cp37-cp37m-linux_x86_64.whl
+Requirement already satisfied: typing-extensions in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2021a/lib/python3.7/site-packages (from torch) (3.10.0.0+computecanada)
+Requirement already satisfied: numpy in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2021a/lib/python3.7/site-packages (from torchvision) (1.21.0+computecanada)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2/Pillow_SIMD-7.0.0.post3+computecanada-cp37-cp37m-linux_x86_64.whl
+Requirement already satisfied: requests in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2021a/lib/python3.7/site-packages (from torchtext) (2.26.0+computecanada)
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/tqdm-4.62.0+computecanada-py2.py3-none-any.whl
+Requirement already satisfied: certifi>=2017.4.17 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2021a/lib/python3.7/site-packages (from requests->torchtext) (2021.5.30+computecanada)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2021a/lib/python3.7/site-packages (from requests->torchtext) (2.0.2+computecanada)
+Requirement already satisfied: idna<4,>=2.5 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2021a/lib/python3.7/site-packages (from requests->torchtext) (3.2+computecanada)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2021a/lib/python3.7/site-packages (from requests->torchtext) (1.26.6+computecanada)
+Installing collected packages: tqdm, pillow-simd, torchvision, torchtext, torchaudio
+Successfully installed pillow-simd-7.0.0.post3+computecanada torchaudio-0.10.0+computecanada torchtext-0.11.0+computecanada torchvision-0.11.1+computecanada tqdm-4.62.0+computecanada
+Looking in links: /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b7806d6ed10>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/ipdb/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b78071301d0>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/ipdb/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b7807130590>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/ipdb/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b7807130950>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/ipdb/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b7807130d50>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/ipdb/
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/ipdb-0.11+computecanada-py3-none-any.whl
+Requirement already satisfied: ipython>=5.0.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from ipdb) (7.25.0)
+Requirement already satisfied: setuptools in /local/hasib.54324096.0/env/lib/python3.7/site-packages (from ipdb) (46.1.3)
+Requirement already satisfied: decorator in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from ipython>=5.0.0->ipdb) (5.0.9)
+Requirement already satisfied: pexpect>4.3 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from ipython>=5.0.0->ipdb) (4.8.0)
+Requirement already satisfied: pygments in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from ipython>=5.0.0->ipdb) (2.9.0)
+Requirement already satisfied: traitlets>=4.2 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from ipython>=5.0.0->ipdb) (5.0.5)
+Requirement already satisfied: backcall in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from ipython>=5.0.0->ipdb) (0.2.0)
+Requirement already satisfied: matplotlib-inline in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from ipython>=5.0.0->ipdb) (0.1.2)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from ipython>=5.0.0->ipdb) (3.0.19)
+Requirement already satisfied: jedi>=0.16 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from ipython>=5.0.0->ipdb) (0.18.0)
+Requirement already satisfied: pickleshare in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from ipython>=5.0.0->ipdb) (0.7.5)
+Requirement already satisfied: parso<0.9.0,>=0.8.0 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from jedi>=0.16->ipython>=5.0.0->ipdb) (0.8.2)
+Requirement already satisfied: ptyprocess>=0.5 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from pexpect>4.3->ipython>=5.0.0->ipdb) (0.7.0)
+Requirement already satisfied: wcwidth in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,<3.1.0,>=2.0.0->ipython>=5.0.0->ipdb) (0.2.5)
+Requirement already satisfied: ipython-genutils in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/ipykernel/2021a/lib/python3.7/site-packages (from traitlets>=4.2->ipython>=5.0.0->ipdb) (0.2.0)
+Installing collected packages: ipdb
+Successfully installed ipdb-0.11+computecanada
+Looking in links: /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b4ca0e56a50>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/opencv-python/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b4ca0e56e50>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/opencv-python/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b4ca0eab1d0>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/opencv-python/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b4ca0eab510>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/opencv-python/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b4ca0eab850>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/opencv-python/
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic/opencv_python-4.5.1.48+computecanada-cp37-cp37m-linux_x86_64.whl
+Requirement already satisfied: numpy>=1.14.5 in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2021a/lib/python3.7/site-packages (from opencv-python) (1.21.0+computecanada)
+Installing collected packages: opencv-python
+Successfully installed opencv-python-4.5.1.48+computecanada
+Looking in links: /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/avx2, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/gentoo/generic, /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b82e3578fd0>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/tensorboardx/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b82e35cd3d0>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/tensorboardx/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b82e35cd750>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/tensorboardx/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b82e35cda90>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/tensorboardx/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b82e35cde10>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/tensorboardx/
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/tensorboardX-2.4+computecanada-py2.py3-none-any.whl
+WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b82e36e11d0>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/protobuf/
+WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b82e36ef150>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/protobuf/
+WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b82e36ef4d0>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/protobuf/
+WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b82e36ef850>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/protobuf/
+WARNING: Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<pip._vendor.urllib3.connection.HTTPSConnection object at 0x2b82e36efc10>: Failed to establish a new connection: [Errno 101] Network is unreachable')': /simple/protobuf/
+Processing /cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic/protobuf-3.19.1+computecanada-py2.py3-none-any.whl
+Requirement already satisfied: numpy in /cvmfs/soft.computecanada.ca/easybuild/software/2020/avx2/Core/scipy-stack/2021a/lib/python3.7/site-packages (from tensorboardX) (1.21.0+computecanada)
+Installing collected packages: protobuf, tensorboardX
+Successfully installed protobuf-3.19.1+computecanada tensorboardX-2.4+computecanada
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) libfabric/1.10.1     2) openmpi/4.0.3     3) ucx/1.8.0
+
+Fri Nov 12 09:19:23 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.73.01    Driver Version: 460.73.01    CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla V100-SXM2...  On   | 00000000:15:00.0 Off |                    0 |
+| N/A   39C    P0    44W / 300W |      0MiB / 32510MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   1  Tesla V100-SXM2...  On   | 00000000:16:00.0 Off |                    0 |
+| N/A   41C    P0    41W / 300W |      0MiB / 32510MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   2  Tesla V100-SXM2...  On   | 00000000:3B:00.0 Off |                    0 |
+| N/A   44C    P0    42W / 300W |      0MiB / 32510MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   3  Tesla V100-SXM2...  On   | 00000000:B2:00.0 Off |                    0 |
+| N/A   41C    P0    42W / 300W |      0MiB / 32510MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+[22;0t]0;IPython: tryon-2d/train_srcStarting training....
+------------ Options -------------
+batchSize: 8
+beta1: 0.5
+checkpoints_dir: ./checkpoints
+continue_train: False
+data_type: 32
+dataroot: /home/hasib/scratch/datasets/acgpn_data/try_on_training/
+debug: False
+display_freq: 100
+display_winsize: 512
+fineSize: 512
+gpu_ids: [0, 1, 2, 3, 4, 5, 6, 7]
+input_nc: 3
+isTrain: True
+label_nc: 20
+lambda_feat: 10.0
+loadSize: 512
+load_pretrain: 
+lr: 0.0002
+max_dataset_size: inf
+model: pix2pixHD
+nThreads: 2
+n_blocks_global: 4
+n_blocks_local: 3
+n_downsample_global: 4
+n_layers_D: 3
+n_local_enhancers: 1
+name: resunet_g1
+ndf: 64
+netG: global
+ngf: 64
+niter: 100
+niter_decay: 100
+niter_fix_global: 0
+no_flip: False
+no_ganFeat_loss: False
+no_html: False
+no_lsgan: False
+no_vgg_loss: False
+norm: instance
+num_D: 2
+output_nc: 3
+phase: train
+pool_size: 0
+print_freq: 100
+resize_or_crop: scale_width
+save_epoch_freq: 10
+save_latest_freq: 1000
+serial_batches: False
+tf_log: False
+use_dropout: False
+verbose: False
+which_epoch: latest
+-------------- End ----------------
+Experiment name: resunet_g1
+CustomDatasetDataLoader
+dataset [AlignedDataset] was created
+/home/hasib/scratch/datasets/acgpn_data/try_on_training/train_label label
+/home/hasib/scratch/datasets/acgpn_data/try_on_training/train_label label
+/home/hasib/scratch/datasets/acgpn_data/try_on_training/train_img img
+/home/hasib/scratch/datasets/acgpn_data/try_on_training/train_img img
+/home/hasib/scratch/datasets/acgpn_data/try_on_training/train_edge edge
+/home/hasib/scratch/datasets/acgpn_data/try_on_training/train_edge edge
+/home/hasib/scratch/datasets/acgpn_data/try_on_training/train_mask mask
+/home/hasib/scratch/datasets/acgpn_data/try_on_training/train_mask mask
+/home/hasib/scratch/datasets/acgpn_data/try_on_training/train_colormask colormask
+/home/hasib/scratch/datasets/acgpn_data/try_on_training/train_colormask colormask
+/home/hasib/scratch/datasets/acgpn_data/try_on_training/train_color color
+/home/hasib/scratch/datasets/acgpn_data/try_on_training/train_color color
+#training images = 14216
+MultiscaleDiscriminator(
+  (scale0_layer0): Sequential(
+    (0): Conv2d(51, 64, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer1): Sequential(
+    (0): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer2): Sequential(
+    (0): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer3): Sequential(
+    (0): Conv2d(256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+    (1): InstanceNorm2d(512, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer4): Sequential(
+    (0): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+  )
+  (scale1_layer0): Sequential(
+    (0): Conv2d(51, 64, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer1): Sequential(
+    (0): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer2): Sequential(
+    (0): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer3): Sequential(
+    (0): Conv2d(256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+    (1): InstanceNorm2d(512, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer4): Sequential(
+    (0): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+  )
+  (downsample): AvgPool2d(kernel_size=3, stride=2, padding=[1, 1])
+)
+MultiscaleDiscriminator(
+  (scale0_layer0): Sequential(
+    (0): Conv2d(38, 64, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer1): Sequential(
+    (0): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer2): Sequential(
+    (0): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer3): Sequential(
+    (0): Conv2d(256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+    (1): InstanceNorm2d(512, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer4): Sequential(
+    (0): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+  )
+  (scale1_layer0): Sequential(
+    (0): Conv2d(38, 64, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer1): Sequential(
+    (0): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer2): Sequential(
+    (0): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer3): Sequential(
+    (0): Conv2d(256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+    (1): InstanceNorm2d(512, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer4): Sequential(
+    (0): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+  )
+  (downsample): AvgPool2d(kernel_size=3, stride=2, padding=[1, 1])
+)
+MultiscaleDiscriminator(
+  (scale0_layer0): Sequential(
+    (0): Conv2d(27, 64, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer1): Sequential(
+    (0): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer2): Sequential(
+    (0): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer3): Sequential(
+    (0): Conv2d(256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+    (1): InstanceNorm2d(512, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer4): Sequential(
+    (0): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+  )
+  (scale1_layer0): Sequential(
+    (0): Conv2d(27, 64, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer1): Sequential(
+    (0): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer2): Sequential(
+    (0): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer3): Sequential(
+    (0): Conv2d(256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+    (1): InstanceNorm2d(512, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer4): Sequential(
+    (0): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+  )
+  (downsample): AvgPool2d(kernel_size=3, stride=2, padding=[1, 1])
+)
+MultiscaleDiscriminator(
+  (scale0_layer0): Sequential(
+    (0): Conv2d(7, 64, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer1): Sequential(
+    (0): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer2): Sequential(
+    (0): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer3): Sequential(
+    (0): Conv2d(256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+    (1): InstanceNorm2d(512, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale0_layer4): Sequential(
+    (0): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+  )
+  (scale1_layer0): Sequential(
+    (0): Conv2d(7, 64, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer1): Sequential(
+    (0): Conv2d(64, 128, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(128, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer2): Sequential(
+    (0): Conv2d(128, 256, kernel_size=(4, 4), stride=(2, 2), padding=(2, 2))
+    (1): InstanceNorm2d(256, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer3): Sequential(
+    (0): Conv2d(256, 512, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+    (1): InstanceNorm2d(512, eps=1e-05, momentum=0.1, affine=False, track_running_stats=False)
+    (2): LeakyReLU(negative_slope=0.2, inplace=True)
+  )
+  (scale1_layer4): Sequential(
+    (0): Conv2d(512, 1, kernel_size=(4, 4), stride=(1, 1), padding=(2, 2))
+  )
+  (downsample): AvgPool2d(kernel_size=3, stride=2, padding=[1, 1])
+)
+Traceback (most recent call last):
+  File "./train.py", line 121, in <module>
+    model = create_model(opt)
+  File "/project/6037045/hasib/works/tryon-2d/train_src/models/models.py", line 20, in create_model
+    model = torch.nn.DataParallel(model, device_ids=opt.gpu_ids)
+  File "/local/hasib.54324096.0/env/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 142, in __init__
+    _check_balance(self.device_ids)
+  File "/local/hasib.54324096.0/env/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 23, in _check_balance
+    dev_props = _get_devices_properties(device_ids)
+  File "/local/hasib.54324096.0/env/lib/python3.7/site-packages/torch/_utils.py", line 464, in _get_devices_properties
+    return [_get_device_attr(lambda m: m.get_device_properties(i)) for i in device_ids]
+  File "/local/hasib.54324096.0/env/lib/python3.7/site-packages/torch/_utils.py", line 464, in <listcomp>
+    return [_get_device_attr(lambda m: m.get_device_properties(i)) for i in device_ids]
+  File "/local/hasib.54324096.0/env/lib/python3.7/site-packages/torch/_utils.py", line 447, in _get_device_attr
+    return get_member(torch.cuda)
+  File "/local/hasib.54324096.0/env/lib/python3.7/site-packages/torch/_utils.py", line 464, in <lambda>
+    return [_get_device_attr(lambda m: m.get_device_properties(i)) for i in device_ids]
+  File "/local/hasib.54324096.0/env/lib/python3.7/site-packages/torch/cuda/__init__.py", line 359, in get_device_properties
+    raise AssertionError("Invalid device id")
+AssertionError: Invalid device id
+
+If you suspect this is an IPython 7.25.0 bug, please report it at:
+    https://github.com/ipython/ipython/issues
+or send an email to the mailing list at ipython-dev@python.org
+
+You can print a more detailed traceback right now with "%tb", or use "%debug"
+to interactively debug it.
+
+Extra-detailed tracebacks for bug-reporting purposes can be enabled via:
+    %config Application.verbose_crash=True
+
