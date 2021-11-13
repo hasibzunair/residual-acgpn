@@ -6,7 +6,7 @@
 # Specify nodes
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:v100:8 # 8
-#SBATCH --cpus-per-task=23 # 23
+#SBATCH --cpus-per-task=24 # 23
 #SBATCH --mem=16G
 
 # Specify time
