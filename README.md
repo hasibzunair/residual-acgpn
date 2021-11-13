@@ -12,6 +12,7 @@ A course project for COMP 6321 Machine Learning, Fall 2021.
 A colab demo is available at https://github.com/hasibzunair/residual-acgpn-demo. Project report is available [here](WILL_BE_ADDED).
 
 ## Make environment
+
 Python >= 3.8.0 required. Run commands below to make your environment.
 ```
 conda create --name comp6321 python=3.8
