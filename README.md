@@ -43,7 +43,8 @@ python train.py --name res-acgpn
 This will create a folder `res-acgpn` inside `checkpoints` and store the model files there.
 
 ## Pretrained model
-We train Residual ACGPN and make the weights available. Download them by clicking [here](https://github.com/hasibzunair/residual-acgpn-demo/releases/tag/v1.0/resacgpn.zip). Unzip the file. Make a folder `checkpoints` in `train_src` and put the file there.
+
+We train Residual ACGPN and make the weights available. Download them by clicking [here](https://github.com/hasibzunair/residual-acgpn-demo/releases/download/v1.0/resacgpn.zip). Unzip the file. Make a folder `checkpoints` in `train_src` and put the file there.
     
 ## Test model
 Open [test-res-acgpn.ipynb](test_src/notebooks/test-res-acgpn.ipynb) run all cells. The notebook runs inference on VITON test set as well as computes SSIM and FID scores for the final evaluation.
