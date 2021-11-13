@@ -22,6 +22,13 @@ pip install opencv-python, matplotlib, sklearn, tqdm, pycocotools, tensorboard
 ```
 OR run `conda env create -f <environment-name>.yml`.
 
+## Clone this repo
+
+```sh
+git clone https://github.com/hasibzunair/residual-acgpn
+cd residual-acgpn
+```
+
 ## Data
     
 Get the training and test datasets from https://github.com/switchablenorms/DeepFashion_Try_On. Make a folder named `datasets/acgpn_data` and put them there. Data directory tree will look like:
