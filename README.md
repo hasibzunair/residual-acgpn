@@ -1,4 +1,4 @@
-# Photo-realistic virtual try-on using Residual ACGPN
+# Improving photo-realistic virtual try-on using residual networks
 
 A course project for COMP 6321 Machine Learning, Fall 2021.
 
@@ -8,11 +8,6 @@ A course project for COMP 6321 Machine Learning, Fall 2021.
     Figure 1. Comparing the proposed method with other recent try-on methods.
     </em>
 </p>
-
-
-
-This work is built on top of CVPR 2020 paper *Towards Photo-Realistic Virtual Try-On by Adaptively
-Generating↔Preserving Image Content* ([Paper](https://arxiv.org/pdf/2003.05863.pdf), [Code](https://github.com/switchablenorms/DeepFashion_Try_On)).
 
 A colab demo is available at https://github.com/hasibzunair/residual-acgpn-demo. Project report is available [here](WILL_BE_ADDED).
 
@@ -45,12 +40,18 @@ Download [vgg19-dcbb9e9d.pth](https://github.com/hasibzunair/residual-acgpn/rele
 ```sh
 python train.py --name res-acgpn
 ```
+This will create a folder `res-acgpn` inside `checkpoints` and store the model files there.
+
+## Pretrained model
+We train Residual ACGPN and make the weights available. Download them by clicking [here](https://github.com/hasibzunair/residual-acgpn-demo/releases/tag/v1.0/resacgpn.zip). Unzip the file. Make a folder `checkpoints` in `train_src` and put the file there.
     
 ## Test model
-Go to `test_src` and run:
-```sh
-python test.py --load_pretrain ./checkpoints/res-acgpn
-```
+Open [test-res-acgpn.ipynb](test_src/notebooks/test-res-acgpn.ipynb) run all cells. The notebook runs inference on VITON test set as well as computes SSIM and FID scores for the final evaluation.
+
+
+## Acknowledgement
+This work is built on top of CVPR 2020 paper *Towards Photo-Realistic Virtual Try-On by Adaptively
+Generating↔Preserving Image Content* ([Paper](https://arxiv.org/pdf/2003.05863.pdf), [Code](https://github.com/switchablenorms/DeepFashion_Try_On)).
 
 ## Reference
 * SSIM and FID scores computed using [https://github.com/Po-Hsun-Su/pytorch-ssim](https://github.com/Po-Hsun-Su/pytorch-ssim) and [https://github.com/mseitzer/pytorch-fid](https://github.com/mseitzer/pytorch-fid)

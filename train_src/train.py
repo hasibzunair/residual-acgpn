@@ -220,7 +220,7 @@ for epoch in range(start_epoch, opt.niter + opt.niter_decay + 1):
         
         # subsample dataset
         # for full data use 'dataset_size'
-        # Using 5000 for 6321 project
+        # Using 5000 for COMP 6321 project
         if epoch_iter >= 5000:
             break
        
