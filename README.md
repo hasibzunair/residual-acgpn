@@ -45,9 +45,9 @@ datasets/
 Download [vgg19-dcbb9e9d.pth](https://github.com/hasibzunair/residual-acgpn/releases/download/tag/v0.1/vgg19-dcbb9e9d.pth) and keep it in `train_src/models` folder. Then go to `train_src` and run:
 
 ```sh
-python train.py --name res-acgpn
+python train.py --name resacgpn
 ```
-This will create a folder `res-acgpn` inside `checkpoints` and store the model files there.
+This will create a folder `resacgpn` inside `checkpoints` and store the model files there.
 
 ## Pretrained model
 
