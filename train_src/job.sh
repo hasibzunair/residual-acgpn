@@ -6,7 +6,7 @@
 # Specify nodes
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:v100:8 # 8
-#SBATCH --cpus-per-task=24 # 23
+#SBATCH --cpus-per-task=24 # 24
 #SBATCH --mem=16G
 
 # Specify time
@@ -52,3 +52,4 @@ python ./train.py  --name resunet_g1 --gpu_ids 0,1,2,3,4,5,6,7 --batchSize 8
 # See GPU usage in job
 # sq -i 5
 # srun --jobid 123456 --pty watch -n 30 nvidia-smi
+# https://github.com/hasibzunair/residual-acgpn/tree/graham
