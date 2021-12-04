@@ -9,7 +9,7 @@ A course project for COMP 6321 Machine Learning, Fall 2021.
     </em>
 </p>
 
-A colab demo is available at https://github.com/hasibzunair/residual-acgpn-demo. Project report is available [here](WILL_BE_ADDED).
+Colab demo is available at https://github.com/hasibzunair/residual-acgpn-demo.
 
 ## Make environment
 
