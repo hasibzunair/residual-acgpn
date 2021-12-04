@@ -14,6 +14,12 @@ from tensorboardX import SummaryWriter
 import cv2
 import datetime
 import ipdb
+import random
+
+# Reproducibility
+torch.manual_seed(0)
+random.seed(0)
+np.random.seed(0)
 
 writer = SummaryWriter('runs/uniform_all')
 SIZE=320
